@@ -8,15 +8,17 @@ public class SingleCharacterScript : MonoBehaviour
     {
         public int bullets;
         public int grenades;
-        public int rockets; 
+        public int rockets;
+
+        public Stuff(int bul, int gre, int roc)
+        {
+            bullets = bul;
+            grenades = gre;
+            rockets = roc;
+        }
     }
 
-    public Stuff (int bul, int gre, int roc)
-    {
-        bullets = bul;
-        grenades = gre;
-        rockets = roc;
-    }
+    
 
     public Stuff myStuff = new Stuff(10, 7, 25);
     public float speed;
@@ -51,7 +53,7 @@ public class SingleCharacterScript : MonoBehaviour
 
     void Shoot()
     {
-        if(Input.GetMouseButtonDown("Fire1") && myStuff.bullets > 0)
+        if(Input.GetButtonDown("Fire1") && myStuff.bullets > 0)
         {
             Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
             bulletInstance.AddForce(firePosition.forward * bulletSpeed);
