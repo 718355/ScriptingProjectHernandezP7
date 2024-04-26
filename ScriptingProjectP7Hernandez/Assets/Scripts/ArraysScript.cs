@@ -11,7 +11,7 @@ public class ArraysScript : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         for (int i= 0; i < players.Length; i++)
         {
-            Debug.Log("Player Number " + i + " isActiveAndEnabled named " + players[i].name);
+            Debug.Log("Player Number " + (i+1) + " isActiveAndEnabled named " + players[i].name);
         }
     }
 
